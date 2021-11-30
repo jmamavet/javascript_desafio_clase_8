@@ -69,6 +69,60 @@
     </header>
 
     <main>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalTickets" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-light" id="staticBackdropLabel">Selecciona tu entrada</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formularioCompra">
+                            <div class="mb-3">
+                                <label for="nombreUsuario" class="form-label text-light">Ingresa tu nombre</label>
+                                <input type="text" class="form-control" id="nombreUsuario">
+                                <div id="errorNombreVacio" class="form-text text-danger"></div>
+                            </div>
+                            <select id="opcionesFechaRecital" class="form-select" aria-label="Default select example">
+                                <option selected value="0">Elegi la fecha del recital</option>
+                                <!-- Aca se generan las opciones -->
+                            </select>
+                            <div id="errorFechaRecitalVacia" class="form-text text-danger"></div>
+                            <br>
+                            <select id="opcionesUbicacion" class="form-select" aria-label="Default select example">
+                                <option selected value="0">Elegi la ubicacion</option>
+                                <!-- Aca se generan las opciones -->
+                            </select>
+                            <div id="errorUbicacionVacia" class="form-text text-danger"></div>
+                            <br>
+                            <select id="opcionesEstacionamiento" class="form-select"
+                                aria-label="Default select example">
+                                <option selected value="0">Elegi el estacionamiento</option>
+                                <!-- Aca se generan las opciones -->
+                            </select>
+                            <br>
+                            <select id="opcionesFechaRetiro" class="form-select" aria-label="Default select example">
+                                <option selected value="0">Elegi cuando retiras tu entrada</option>
+                                <!-- Aca se generan las opciones -->
+                            </select>
+                            <div id="errorFechaRetiroVacia" class="form-text text-danger"></div>
+                            <br>
+                            <!-- <div id="" class="form-text text-end">Total: </div> -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-danger">Confirmar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <h1 class="text-danger">Próximos Shows</h1>
             <div class="row">
@@ -87,7 +141,8 @@
                                 </article>
                             </div>
                             <div>
-                                <button type="button" class="btn btn-danger">Tickets</button>
+                                <button id="botonTickets" type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#modalTickets">Tickets</button>
                             </div>
                         </div>
                     </div>
